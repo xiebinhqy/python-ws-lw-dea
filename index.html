@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Insights | Modern Web Development Blog</title>
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: #2d3748;
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #4299e1;
+        }
+
+        /* 主要内容区 */
+        main {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 3rem;
+            padding: 3rem 0;
+        }
+
+        /* 文章列表 */
+        .blog-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .post-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+        }
+
+        .post-meta {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .post-category {
+            background-color: #e2e8f0;
+            color: #2d3748;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .post-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .post-title a {
+            color: #2d3748;
+            text-decoration: none;
+        }
+
+        .post-title a:hover {
+            color: #4299e1;
+        }
+
+        .post-excerpt {
+            color: #4a5568;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: #4299e1;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* 侧边栏 */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-widget {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .widget-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .about-author img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .category-list a {
+            color: #4a5568;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .category-list a:hover {
+            color: #4299e1;
+        }
+
+        /* 底部 */
+        footer {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header>
+        <div class="container nav-content">
+            <a href="#" class="logo">Tech Insights</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="container">
+        <!-- 博客文章区 -->
+        <section class="blog-posts">
+            <!-- 文章卡片 1 -->
+            <article class="post-card">
+                <div class="post-meta">
+                    <span>January 15, 2026</span>
+                    <span class="post-category">Web Development</span>
+                </div>
+                <h2 class="post-title"><a href="#">The Future of Responsive Web Design in 2026</a></h2>
+                <p class="post-excerpt">
+                    Explore the latest trends and technologies shaping responsive design, from container queries to AI-powered layout systems. Learn how modern frameworks are adapting to the evolving multi-device landscape.
+                </p>
+                <a href="#" class="read-more">Read Full Article →</a>
+            </article>
+
+            <!-- 文章卡片 2 -->
+            <article class="post-card">
+                <div class="post-meta">
+                    <span>January 10, 2026</span>
+                    <span class="post-category">Cloud Computing</span>
+                </div>
+                <h2 class="post-title"><a href="#">Optimizing Serverless Workflows for Cost Efficiency</a></h2>
+                <p class="post-excerpt">
+                    Discover practical strategies to reduce costs in serverless architectures without sacrificing performance. Learn about cold start optimization, resource allocation, and monitoring best practices.
+                </p>
+                <a href="#" class="read-more">Read Full Article →</a>
+            </article>
+
+            <!-- 文章卡片 3 -->
+            <article class="post-card">
+                <div class="post-meta">
+                    <span>January 5, 2026</span>
+                    <span class="post-category">DevOps</span>
+                </div>
+                <h2 class="post-title"><a href="#">Implementing CI/CD Pipelines for Static Site Generation</a></h2>
+                <p class="post-excerpt">
+                    Step-by-step guide to setting up automated deployment pipelines for static sites using modern tools like GitHub Actions and Netlify. Learn how to integrate testing, linting, and preview environments.
+                </p>
+                <a href="#" class="read-more">Read Full Article →</a>
+            </article>
+        </section>
+
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <!-- 作者信息 -->
+            <div class="sidebar-widget about-author">
+                <h3 class="widget-title">About the Author</h3>
+                <img src="https://picsum.photos/id/1005/100/100"  alt="Author Avatar">
+                <p>
+                    A passionate web developer and cloud architect with 8+ years of experience building scalable web applications. Specializing in modern frontend frameworks and serverless technologies.
+                </p>
+            </div>
+
+            <!-- 分类列表 -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">Categories</h3>
+                <ul class="category-list">
+                    <li><a href="#">Web Development (12)</a></li>
+                    <li><a href="#">Cloud Computing (8)</a></li>
+                    <li><a href="#">DevOps (6)</a></li>
+                    <li><a href="#">Cybersecurity (4)</a></li>
+                    <li><a href="#">AI & ML (3)</a></li>
+                </ul>
+            </div>
+
+            <!-- 订阅区域 -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">Stay Updated</h3>
+                <p>Subscribe to our newsletter for weekly tech insights and tutorials.</p>
+                <form style="margin-top: 1rem;">
+                    <input 
+                        type="email" 
+                        placeholder="Enter your email" 
+                        style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 4px; margin-bottom: 0.75rem;"
+                        required
+                    >
+                    <button 
+                        type="submit"
+                        style="width: 100%; padding: 0.75rem; background-color: #4299e1; color: white; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;"
+                    >
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </aside>
+    </main>
+
+    <!-- 页面底部 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Tech Insights. All rights reserved.</p>
+            <p>Built with pure HTML & CSS | Designed for developers</p>
+        </div>
+    </footer>
+</body>
+</html>
